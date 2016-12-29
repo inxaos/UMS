@@ -1,0 +1,16 @@
+[Unit]
+Description=Universal Media Server
+Wants=network.target
+After=network-online.target
+
+[Service]
+Type=simple
+Environment="UMS_PROFILE=/etc/ums/UMS.conf"
+#User=damon
+#Group=users
+WorkingDirectory=/opt/ums
+ExecStart=/opt/ums/UMS.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
